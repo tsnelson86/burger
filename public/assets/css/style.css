@@ -1,0 +1,30 @@
+body {
+	background: #8a8a8a;
+}
+
+li {
+  padding: 15px;
+  margin: 15px;
+  background: #eceff1;
+  list-style: none;
+  border: 1px black solid;
+}
+.devourer {
+	display: inline;
+	float: right;
+}
+
+.center {
+	text-align: center;
+}
+
+h1, 
+h2 {
+	text-align: center;
+}
+
+.create-update-form {
+  padding: 25px;
+  background: #eceff1;
+  border: 1px black solid;
+}

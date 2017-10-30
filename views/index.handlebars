@@ -1,0 +1,56 @@
+<div class="container bg">
+  
+  <div class="row">
+    <div class="center col-sm-12">
+        <h1 style="text-align: center">Eat-Da-Burger App</h1>
+        <br>
+        <br>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Burgers with Devoured == False -->
+    <div class="col-sm-6">
+      <h2>Burgers to Eat</h2>
+      <ul>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <li>
+              {{this.id}}
+              {{this.burger_name}}
+              <form class="devourer" action="/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button class="btn-primary" type="submit">Devour It!</button>
+              </form>
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <!-- Burgers with Devoured == True -->
+    <div class="col-sm-6">
+    <h2>Burgers That Have Been Devoured</h2>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="row">
+    <!-- Submit New Burgers to Eat -->
+    <div class="col-sm-3"></div>
+    <div class="center col-sm-6">
+      <h2>Add A Burger</h2>
+      <form class="create-update-form" action="/" method="POST">
+        <div class="form-group">
+          <p>Enter the name of a burger you want to order.</p>
+          <input type="text" id="ca" name="burger_name">
+        </div>
+        <button class="btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>
